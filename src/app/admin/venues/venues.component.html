@@ -1,0 +1,36 @@
+<div class="page-container">
+
+    <div class="venues">
+        <div class="header">venues</div>
+        <!-- <mat-spinner *ngIf="!venues$|async"></mat-spinner> -->
+        <div class="venue"
+            *ngFor="let venue of (venues$|async)">
+            <div class="name_id">
+                <div class="name">{{venue.name}}</div>
+                <div class="id">{{venue.id}}</div>
+            </div>
+            <div class="buttons">
+                <button class="delete"
+                    mat-raised-button
+                    color="warn"
+                    (click)="onDelete(venue.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-raised-button
+                    color="primary"
+                    class="edit"
+                    (click)="onEditVenue(venue.id, venue.name)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button class="delete"
+                    mat-raised-button
+                    (click)="onItems(venue)"
+                    matTooltip="Add items to this venue">items
+                </button>
+            </div>
+        </div>
+        <button class="add-venue"
+            mat-raised-button
+            (click)="onAddVenue()"
+            color="primary">add venue</button>
+    </div>

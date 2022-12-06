@@ -1,0 +1,61 @@
+<div class="page-container">
+    <div class="name"
+        *ngIf="name">{{name}}</div>
+    <form [formGroup]="form">
+        <div class="input-header">
+
+
+            <button mat-raised-button
+                matTooltip="A header can contain a maximum of 25 characters. It will start on a new line and the font will be bigger than the reguar text. The text following the header will start on a new line. A header with the name of the item will be automatically generated. Do NOT alter the <h5></h5> tags. Any text between tags, other than the <hs> tags will automatically be removed."
+                (click)="addHeader()">add header
+            </button>
+            <button mat-raised-button
+                matTooltip="Any text with surrounded by <p></p> tags will start on a new line. At the top and bottom of the paragraph there will be a white line."
+                (click)="addParagraph()">add paragraph
+            </button>
+            <button mat-raised-button
+                matTooltip="Any text followed by <br> will start on a new line. Instead of using this button you can also use the return key on your keyboard."
+                (click)="addLineBreak()">linebreak
+            </button>
+            <!-- <button (click)="onCheckForHeaderLength()">check header</button> -->
+        </div>
+
+        <mat-form-field>
+            <textarea (click)="textareaClicked()"
+                #textarea
+                type="text"
+                placeholder="enter your description here"
+                [ngStyle]="{'height': textAreaHeight}"
+                (keyup)="textareaKeyUp($event)"
+                class="input"
+                formControlName="description"
+                matInput>{{description}}
+            </textarea>
+        </mat-form-field>
+
+    </form>
+
+    <div class="output">
+        <div class="output-header">
+            <div class="icon">
+                <mat-icon matTooltip="This is a reprentation of your input in the left part of the screen. You cannot edit in this window. ">info</mat-icon>
+            </div>
+            <button mat-raised-button
+                color="warn"
+                (click)="onCancel()">cancel</button>
+            <button mat-raised-button
+                [disabled]="submitDisabled"
+                (click)="onSubmit()">submit output</button>
+
+
+        </div>
+
+        <div class="content"
+            [innerHTML]="description"
+            #output>
+            <!-- {{selectedString}} -->
+
+        </div>
+    </div>
+</div>
+<!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem labore similique facere tempora sunt adipisci harum aperiam consectetur. Ullam vitae perferendis, sed voluptas molestias quibusdam aperiam eum dignissimos optio nostrum sequi numquam laudantium recusandae cumque veritatis asperiores corrupti odit nemo tempore libero aliquam nihil aspernatur. Dolor aliquam doloribus sit. Odio? -->

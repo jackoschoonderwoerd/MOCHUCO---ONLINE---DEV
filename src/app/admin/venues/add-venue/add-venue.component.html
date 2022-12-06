@@ -1,0 +1,18 @@
+<div class="page-container">
+    <form [formGroup]="form">
+        <div class="info">
+            Choose a unique, easy to remember name. This name is for your personal reference and will not be shown to the user.
+        </div>
+        <mat-form-field>
+            <input type="text"
+                matInput
+                formControlName="name"
+                placeholder="venue name">
+        </mat-form-field>
+        <button mat-raised-button
+            [disabled]="form.invalid"
+            (click)='onSubmit()'>submit</button>
+        <button mat-raised-button
+            (click)='onCancel()'>cancel</button>
+    </form>
+</div>

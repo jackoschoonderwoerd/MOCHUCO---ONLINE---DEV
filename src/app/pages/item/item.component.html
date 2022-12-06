@@ -1,0 +1,21 @@
+<div class="page-container">
+    <div class="content">
+        <h4 class="name">{{itemName}}</h4>
+        <img *ngIf="imageUrl"
+            [src]="imageUrl"
+            alt="">
+        <app-audio *ngIf="audioUrl"
+            class="app-audio"
+            [ngClass]="[isAudioPanelOpen ? 'audioPanelOpen': 'audioPanelClosed']"
+            (audioPanelOpen)="audioPanelOpen($event)"></app-audio>
+        <div class="description"
+            *ngIf="description"
+            [innerHTML]="description"></div>
+        <!-- <div class="audioUrl">{{audioUrl}}</div> -->
+        <!-- <audio *ngIf="audioUrl"
+            [src]="audioUrl"
+            [autoplay]="audioAutoplay"
+            controls></audio> -->
+    </div>
+
+</div>
