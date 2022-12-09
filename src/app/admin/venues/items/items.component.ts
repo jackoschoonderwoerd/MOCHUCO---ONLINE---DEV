@@ -11,6 +11,7 @@ import { ItemImageComponent } from './add-item/item-image/item-image.component';
 import { ImageDialogComponent } from './image-dialog/image-dialog.component';
 import { ItemsService } from './items.service';
 import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
+import { AuthService } from '../../auth/auth.service';
 
 
 @Component({
@@ -36,7 +37,8 @@ export class ItemsComponent implements OnInit {
         private router: Router,
         private dialog: MatDialog,
         private itemDetailsService: ItemDetailsService,
-        private itemsService: ItemsService
+        private itemsService: ItemsService,
+        public authService: AuthService
     ) { }
 
     ngOnInit(): void {

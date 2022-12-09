@@ -15,6 +15,7 @@ export class QrCodeComponent implements OnInit {
     itemName: string;
     local: boolean = false;
     localLink: string;
+    remoteLink: string;
     @ViewChild('printarea') private printarea: ElementRef
     constructor(
         @Inject(MAT_DIALOG_DATA) private data: any) { }
@@ -25,9 +26,10 @@ export class QrCodeComponent implements OnInit {
         this.itemName = this.data.itemName
         this.local = this.data.local
         this.localLink = `http://localhost:4200/item?venueId=${this.venueId}&itemId=${this.itemId}`
+        this.remoteLink = `https://mochuco-online-3995f.web.app/item?venueId=${this.venueId}&itemId=${this.itemId}`
     }
     onDownloadQrCode() {
-        console.log(this.printarea.nativeElement)
+        console.log(this.printarea.nativeElement, '/////?????')
         let DATA: any = this.printarea.nativeElement;
         html2canvas(DATA).then((canvas) => {
             let fileWidth = 210;

@@ -3,6 +3,14 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    .remote-link {
+        border: 1px solid blue;
+        padding: 0.2rem 0.3rem;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
     .local {
         font-size: 1.5rem;
         font-weight: bolder;

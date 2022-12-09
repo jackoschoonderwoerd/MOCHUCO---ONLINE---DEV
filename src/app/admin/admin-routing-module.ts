@@ -1,6 +1,6 @@
 import { NgClass } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AdminComponent } from './admin.component';
 
 

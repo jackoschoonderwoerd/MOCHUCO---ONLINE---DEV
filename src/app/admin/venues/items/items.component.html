@@ -33,7 +33,8 @@
                         (click)="onDelete(item.id)">
                         <mat-icon>delete</mat-icon>
                     </button>
-                    <button mat-raised-button
+                    <button *ngIf="authService.isAdmin$ | async"
+                        mat-raised-button
                         color="primary"
                         (click)="onQrCodeLocal(item.id, item.name)">
                         QRL
