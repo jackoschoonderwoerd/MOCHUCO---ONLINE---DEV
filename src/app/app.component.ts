@@ -12,12 +12,17 @@ export class AppComponent implements OnInit {
     title = 'Mochuco';
 
 
+
+
     constructor(
         private swUpdate: SwUpdate,
 
     ) { }
 
+
+
     ngOnInit(): void {
+
 
         if (this.swUpdate.isEnabled) {
             this.swUpdate.versionUpdates.subscribe(() => {
@@ -26,6 +31,8 @@ export class AppComponent implements OnInit {
                 }
             });
         }
+
     }
+
 }
 
